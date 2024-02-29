@@ -18,4 +18,9 @@ Pillow
 3. ```The output file is genereted in a folder call output in the same directory of the script```
 ## Use
 
-Example: ```python3 resize-image.py img/*.png ```
+### Single file 
+```python3 resize-image.py image.png ``` 
+### By extension
+```python3 resize-image.py img/*.png ```
+### Full folder
+```python3 resize-image.py img/ ```
