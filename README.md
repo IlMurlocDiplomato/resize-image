@@ -27,3 +27,7 @@ The file size limit is incrase from 500Mb. It should be bigger but it may become
 ```python3 resize-image.py img/*.png ```
 ### Full folder
 ```python3 resize-image.py img/ ```
+
+# Thanks
+Thanks to ImBiagio for the original script 
+[ImBiagio](https://github.com/ImBiagio/resize-images)
