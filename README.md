@@ -3,13 +3,15 @@
 
 ## Description
 
-This script convert image to jpg format then resize it using image.thumbnail function.
+This script convert image and pdf to jpg format then resize it using image.thumbnail function.
 The default value is 2000x2000
 
 ## Requirement
 
-Pillow 
+###Pillow 
 ```pip install Pillow ```
+###Pdf2image
+```pip install pdf2image ```
 
 ## Install
 
