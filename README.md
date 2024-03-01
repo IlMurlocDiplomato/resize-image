@@ -4,7 +4,8 @@
 ## Description
 
 This script convert image and pdf to jpg format then resize it using image.thumbnail function.
-The default value is 2000x2000
+The default value is 2000x2000.
+The file size limit is incrase from 500Mb. It should be bigger but it may become a DOS attack, thats value its good for convert/resize big size image and limit potential vulnerability.
 
 ## Requirement
 
