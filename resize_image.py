@@ -15,8 +15,21 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def convert_to_jpg(file, dpi):
     try:
+        # Check if the file is an image file (not a PDF)
+        if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+            print(f"Converting {file} to JPG...")
+            # Open the image file
+            with Image.open(file) as img:
+                # Convert RGBA images to RGB
+                if img.mode == 'RGBA':
+                    img = img.convert('RGB')
+                # Save the image as JPG
+                new_file = os.path.splitext(file)[0] + '.jpg'
+                img.save(new_file, 'JPEG')
+                print(f"Image {file} converted to JPG successfully.")
+                return [new_file]
         # Check if the file is a PDF
-        if file.lower().endswith('.pdf'):
+        elif file.lower().endswith('.pdf'):
             print(f"Converting {file} to JPG...")
             # Convert PDF to images
             pages = convert_from_path(file, dpi)
@@ -31,8 +44,9 @@ def convert_to_jpg(file, dpi):
             print(f"PDF {file} converted to JPG successfully.")
             return converted_files
         else:
-            # It's not a PDF file, so it's already an image file
-            return [file]
+            # It's neither a PDF file nor an image file
+            print(f"{file} is not supported for conversion.")
+            return []
     except Exception as e:
         print(f"Error converting {file} to JPG:", str(e))
         return []
